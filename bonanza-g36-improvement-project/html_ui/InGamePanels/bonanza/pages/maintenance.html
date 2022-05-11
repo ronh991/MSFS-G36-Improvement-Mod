@@ -17,7 +17,7 @@
     <title>Hangar</title>
   </head>
   <body onload="parent.htmlState()">
-    <div id="panelState"></div>
+    <div id="panelMaintenance"></div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-hangar border-bottom border-hangar-blue" style="height:80px;">
       <div class="container-fluid">
         <i class="fa-solid fa-warehouse text-white fa-2x"></i>
@@ -57,9 +57,67 @@
       <div class="row justify-content-center mt-5 px-3">
         <div class="col">
           <h3 class="page-title">Maintenance Hangar</h3>
-          <p>
-            Coming Soon
-          </p>
+          <div class="col-lg-10 offset-sm-1 my-3">
+            <p>
+              <u>Spark Plugs</u>
+            </p>
+            <div class="row">
+              <div class="col-9 offset-sm-1 my-3">
+              <dl class="row">
+                <dt class="custom-control custom-switch text-offwhite">
+                  <input type="checkbox" class="custom-control-input" id="newplug1" onclick="parent.resetCylinder1()"/>&nbsp;
+                  <label id="newplug1Label" class="custom-control-label" for="newplug1">Install new plugs Cylinder 1</label>
+                </dt>
+                <dd>
+                  <span class="text-offwhite">Current Likelihood of fouling cylinder 1</span>&nbsp;<span id="likelihood1" class="text-offwhite">Placeholder</span>
+                  <div id="fouling1" class="text-yellow"/>
+                </dd>
+                <dt class="custom-control custom-switch text-offwhite">
+                  <input type="checkbox" class="custom-control-input" id="newplug2" onclick="parent.resetCylinder2()"/>&nbsp;
+                  <label id="newplug2Label" class="custom-control-label" for="newplug2">Install new plugs Cylinder 2</label>
+                </dt>
+                <dd>
+                  <span class="text-offwhite">Current Likelihood of fouling cylinder 2</span>&nbsp;<span id="likelihood3" class="text-offwhite">Placeholder</span>
+                  <div id="fouling3" class="text-yellow"/>
+                </dd>
+                <dt class="custom-control custom-switch text-offwhite">
+                  <input type="checkbox" class="custom-control-input" id="newplug3" onclick="parent.resetCylinder3()"/>&nbsp;
+                  <label id="newplug3Label" class="custom-control-label" for="newplug3">Install new plugs Cylinder 3</label>
+                </dt>
+                <dd>
+                  <span class="text-offwhite">Current Likelihood of fouling cylinder 3</span>&nbsp;<span id="likelihood5" class="text-offwhite">Placeholder</span>
+                  <div id="fouling5" class="text-yellow"/>
+                </dd>
+                <dt class="custom-control custom-switch text-offwhite">
+                  <input type="checkbox" class="custom-control-input" id="newplug4" onclick="parent.resetCylinder4()"/>&nbsp;
+                  <label id="newplug4Label" class="custom-control-label" for="newplug4">Install new plugs Cylinder 4</label>
+                </dt>
+                <dd>
+                  <span class="text-offwhite">Current Likelihood of fouling cylinder 4</span>&nbsp;<span id="likelihood7" class="text-offwhite">Placeholder</span>
+                  <div id="fouling7" class="text-yellow"/>
+                </dd>
+                <dt class="custom-control custom-switch text-offwhite">
+                  <input type="checkbox" class="custom-control-input" id="newplug5" onclick="parent.resetCylinder5()"/>&nbsp;
+                  <label id="newplug5Label" class="custom-control-label" for="newplug5">Install new plugs Cylinder 5</label>
+                </dt>
+                <dd>
+                  <span class="text-offwhite">Current Likelihood of fouling cylinder 5</span>&nbsp;<span id="likelihood9" class="text-offwhite">Placeholder</span>
+                  <div id="fouling9" class="text-yellow"/>
+                </dd>
+                <dt class="custom-control custom-switch text-offwhite">
+                  <input type="checkbox" class="custom-control-input" id="newplug6" onclick="parent.resetCylinder6()"/>&nbsp;
+                  <label id="newplug6Label" class="custom-control-label" for="newplug6">Install new plugs Cylinder 6</label>
+                </dt>
+                <dd>
+                  <span class="text-offwhite">Current Likelihood of fouling cylinder 6</span>&nbsp;<span id="likelihood11" class="text-offwhite">Placeholder</span>
+                  <div id="fouling11" class="text-yellow"/>
+                </dd>
+                </dl>
+                <div/>
+                <br/>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

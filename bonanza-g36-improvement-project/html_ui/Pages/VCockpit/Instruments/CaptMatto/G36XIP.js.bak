@@ -10,9 +10,6 @@ class G36XIP extends BaseInstrument {
     super();
 
     //Set our variables and read from the DataStore whilst the sim is loading the flight
-    let seed = Math.floor(Math.random() * 100);
-    SimVar.SetSimVarValue("L:G36XIP_RANDOMSEED", "number", seed);
-    var randomnumber = 0;
     var title = SimVar.GetSimVarValue("TITLE", "string");
     this.livery = title.replace(/\s+/g, '_');
     var active = 1;
@@ -20,8 +17,6 @@ class G36XIP extends BaseInstrument {
 
     if (GetStoredData('G36XIP_STATE_ACTIVE_'+this.livery) == 1) {
       console.log('State Saving Enabled');
-    this.sparkcount = 6;
-    SimVar.SetSimVarValue("L:G36XIP_SPARKCOUNT", "number", Number(this.sparkcount));
 
 
       //Brand new Aircraft that has had a 45min acceptance flight & 30 minute flight checks prior to ownership
@@ -117,55 +112,16 @@ class G36XIP extends BaseInstrument {
       //MODELLING STUFF
 
       //SPARKS
-      randomnumber = middleSquareMethod()/1000.0;
-      this.spark1 = parseFloat(GetStoredData('G36XIP_SPARK_1_LIKELIHOOD_'+this.livery)) != 0.0 ? GetStoredData('G36XIP_SPARK_1_LIKELIHOOD_'+this.livery) : randomnumber;
-      randomnumber = middleSquareMethod()/1000.0;
-      this.spark3 = parseFloat(GetStoredData('G36XIP_SPARK_3_LIKELIHOOD_'+this.livery)) != 0.0 ? GetStoredData('G36XIP_SPARK_3_LIKELIHOOD_'+this.livery) : randomnumber;
-      randomnumber = middleSquareMethod()/1000.0;
-      this.spark5 = parseFloat(GetStoredData('G36XIP_SPARK_5_LIKELIHOOD_'+this.livery)) != 0.0 ? GetStoredData('G36XIP_SPARK_5_LIKELIHOOD_'+this.livery) : randomnumber;
-      randomnumber = middleSquareMethod()/1000.0;
-      this.spark7 = parseFloat(GetStoredData('G36XIP_SPARK_7_LIKELIHOOD_'+this.livery)) != 0.0 ? GetStoredData('G36XIP_SPARK_7_LIKELIHOOD_'+this.livery) : randomnumber;
-      randomnumber = middleSquareMethod()/1000.0;
-      this.spark9 = parseFloat(GetStoredData('G36XIP_SPARK_9_LIKELIHOOD_'+this.livery)) != 0.0 ? GetStoredData('G36XIP_SPARK_9_LIKELIHOOD_'+this.livery) : randomnumber;
-      randomnumber = middleSquareMethod()/1000.0;
-      this.spark11 = parseFloat(GetStoredData('G36XIP_SPARK_11_LIKELIHOOD_'+this.livery)) != 0.0 ? GetStoredData('G36XIP_SPARK_11_LIKELIHOOD_'+this.livery) : randomnumber;
-      this.sparkarray = [this.spark1, this.spark3, this.spark5, this.spark7, this.spark9, this.spark11];
+      this.spark1 = GetStoredData('G36XIP_SPARK_1_LIKELIHOOD_'+this.livery) ? Math.random() : Math.random();
+      this.spark3 = GetStoredData('G36XIP_SPARK_3_LIKELIHOOD_'+this.livery) ? Math.random() : Math.random();
+      this.spark5 = GetStoredData('G36XIP_SPARK_5_LIKELIHOOD_'+this.livery) ? Math.random() : Math.random();
+      this.spark7 = GetStoredData('G36XIP_SPARK_7_LIKELIHOOD_'+this.livery) ? Math.random() : Math.random();
+      this.spark9 = GetStoredData('G36XIP_SPARK_9_LIKELIHOOD_'+this.livery) ? Math.random() : Math.random();
+      this.spark11 = GetStoredData('G36XIP_SPARK_11_LIKELIHOOD_'+this.livery) ? Math.random() : Math.random();
 
     }
-    else {
-      // alresdy retrieved from datastore - probably a flight restart
-      randomnumber = middleSquareMethod()/1000.0;
-          SetStoredData('G36XIP_SPARK_1_LIKELIHOOD_'+this.livery, randomnumber.toString());
-       randomnumber = middleSquareMethod()/1000.0;
-          SetStoredData('G36XIP_SPARK_3_LIKELIHOOD_'+this.livery, randomnumber.toString());
-      randomnumber = middleSquareMethod()/1000.0;
-          SetStoredData('G36XIP_SPARK_5_LIKELIHOOD_'+this.livery, randomnumber.toString());
-      randomnumber = middleSquareMethod()/1000.0;
-          SetStoredData('G36XIP_SPARK_7_LIKELIHOOD_'+this.livery, randomnumber.toString());
-      randomnumber = middleSquareMethod()/1000.0;
-          SetStoredData('G36XIP_SPARK_9_LIKELIHOOD_'+this.livery, randomnumber.toString());
-      randomnumber = middleSquareMethod()/1000.0;
-          SetStoredData('G36XIP_SPARK_11_LIKELIHOOD_'+this.livery, randomnumber.toString());
-      
-
-      this.spark1 = parseFloat(GetStoredData('G36XIP_SPARK_1_LIKELIHOOD_'+this.livery));
-      this.spark3 = parseFloat(GetStoredData('G36XIP_SPARK_3_LIKELIHOOD_'+this.livery));
-      this.spark5 = parseFloat(GetStoredData('G36XIP_SPARK_5_LIKELIHOOD_'+this.livery));
-      this.spark7 = parseFloat(GetStoredData('G36XIP_SPARK_7_LIKELIHOOD_'+this.livery));
-      this.spark9 = parseFloat(GetStoredData('G36XIP_SPARK_9_LIKELIHOOD_'+this.livery));
-      this.spark11 = parseFloat(GetStoredData('G36XIP_SPARK_11_LIKELIHOOD_'+this.livery));
-      this.sparkarray = [this.spark1, this.spark3, this.spark5, this.spark7, this.spark9, this.spark11];
-          SimVar.SetSimVarValue('L:G36XIP_RESET', "number", "0")
-    }
 
 
-    function middleSquareMethod() {
-      let result = (seed*seed).toString().padStart(4,"0").slice(1,4);
-
-      // Pad with zeros as necessary, then extract the middle value.
-      seed = parseInt(result);
-      return parseFloat(result); // return 3-digit pseudo-random number
-    }
   }
 
   //load the gauge template - found in G36XIP.HTML

@@ -80,77 +80,77 @@ checkAutoload();
     return item ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol : "0";
   }
 
-  function resetCylinder1() {
-    var iframe = document.getElementById('iframeId');
-    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-    var seed = SimVar.GetSimVarValue("L:G36XIP_RANDOMSEED", "number");
-    randomnumber = middleSquareMethod(seed)/1000.0;
-    SimVar.SetSimVarValue('L:G36XIP_SPARK_1_LIKELIHOOD', "number", randomnumber);
-    console.log('Panel - New Plugs cylinder 1');
-    innerDoc.getElementById("newplug1Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 1 Installed";
-    innerDoc.getElementById("likelihood1").innerHTML = randomnumber.toString();
-  }
-  function resetCylinder2() {
-    var iframe = document.getElementById('iframeId');
-    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-    var seed = SimVar.GetSimVarValue("L:G36XIP_RANDOMSEED", "number");
-    randomnumber = middleSquareMethod(seed)/1000.0;
-    SimVar.SetSimVarValue('L:G36XIP_SPARK_3_LIKELIHOOD', "number", randomnumber);
-    console.log('Panel - New Plugs cylinder 2');
-    innerDoc.getElementById("newplug2Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 2 Installed";
-    innerDoc.getElementById("likelihood3").innerHTML = randomnumber.toString();
-  }
-  function resetCylinder3() {
-    var iframe = document.getElementById('iframeId');
-    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-    var seed = SimVar.GetSimVarValue("L:G36XIP_RANDOMSEED", "number");
-    randomnumber = middleSquareMethod(seed)/1000.0;
-    SimVar.SetSimVarValue('L:G36XIP_SPARK_5_LIKELIHOOD', "number", randomnumber);
-    console.log('Panel - New Plugs cylinder 3');
-    innerDoc.getElementById("newplug3Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 3 Installed";
-    innerDoc.getElementById("likelihood5").innerHTML = randomnumber.toString();
-  }
-  function resetCylinder4() {
-    var iframe = document.getElementById('iframeId');
-    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-    var seed = SimVar.GetSimVarValue("L:G36XIP_RANDOMSEED", "number");
-    randomnumber = middleSquareMethod(seed)/1000.0;
-    SimVar.SetSimVarValue('L:G36XIP_SPARK_7_LIKELIHOOD', "number", randomnumber);
-    console.log('Panel - New Plugs cylinder 4');
-    innerDoc.getElementById("newplug4Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 4 Installed";
-    innerDoc.getElementById("likelihood7").innerHTML = randomnumber.toString();
-  }
-  function resetCylinder5() {
-    var iframe = document.getElementById('iframeId');
-    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-    var seed = SimVar.GetSimVarValue("L:G36XIP_RANDOMSEED", "number");
-    randomnumber = middleSquareMethod(seed)/1000.0;
-    SimVar.SetSimVarValue('L:G36XIP_SPARK_9_LIKELIHOOD', "number", randomnumber);
-    console.log('Panel - New Plugs cylinder 5');
-    innerDoc.getElementById("newplug5Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 5 Installed";
-    innerDoc.getElementById("likelihood9").innerHTML = randomnumber.toString();
-  }
-  function resetCylinder6() {
-    var iframe = document.getElementById('iframeId');
-    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-    var seed = SimVar.GetSimVarValue("L:G36XIP_RANDOMSEED", "number");
-    randomnumber = middleSquareMethod(seed)/1000.0;
-    SimVar.SetSimVarValue('L:G36XIP_SPARK_11_LIKELIHOOD', "number", randomnumber);
-    console.log('Panel - New Plugs cylinder 6');
-    innerDoc.getElementById("newplug6Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 6 Installed";
-    innerDoc.getElementById("likelihood11").innerHTML = randomnumber.toString();
-  }
-  function middleSquareMethod(seed) {
-        let result = (seed*seed).toString().padStart(4,"0").slice(1,4);
+function resetCylinder1() {
+  var iframe = document.getElementById('iframeId');
+  var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+	var seed = SimVar.GetSimVarValue("L:DA40180XIP_RANDOMSEED", "number");
+	randomnumber = middleSquareMethod(seed)/1000.0;
+	SimVar.SetSimVarValue('L:DA40180XIP_SPARK_1_LIKELIHOOD', "number", randomnumber);
+	console.log('Panel - New Plugs cylinder 1');
+  innerDoc.getElementById("newplug1Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 1 Installed";
+  innerDoc.getElementById("likelihood1").innerHTML = randomnumber.toString();
+}
+function resetCylinder2() {
+  var iframe = document.getElementById('iframeId');
+  var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+	var seed = SimVar.GetSimVarValue("L:DA40180XIP_RANDOMSEED", "number");
+	randomnumber = middleSquareMethod(seed)/1000.0;
+	SimVar.SetSimVarValue('L:DA40180XIP_SPARK_3_LIKELIHOOD', "number", randomnumber);
+	console.log('Panel - New Plugs cylinder 2');
+  innerDoc.getElementById("newplug2Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 2 Installed";
+  innerDoc.getElementById("likelihood3").innerHTML = randomnumber.toString();
+}
+function resetCylinder3() {
+  var iframe = document.getElementById('iframeId');
+  var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+	var seed = SimVar.GetSimVarValue("L:DA40180XIP_RANDOMSEED", "number");
+	randomnumber = middleSquareMethod(seed)/1000.0;
+	SimVar.SetSimVarValue('L:DA40180XIP_SPARK_5_LIKELIHOOD', "number", randomnumber);
+	console.log('Panel - New Plugs cylinder 3');
+  innerDoc.getElementById("newplug3Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 3 Installed";
+  innerDoc.getElementById("likelihood5").innerHTML = randomnumber.toString();
+}
+function resetCylinder4() {
+  var iframe = document.getElementById('iframeId');
+  var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+	var seed = SimVar.GetSimVarValue("L:DA40180XIP_RANDOMSEED", "number");
+	randomnumber = middleSquareMethod(seed)/1000.0;
+	SimVar.SetSimVarValue('L:DA40180XIP_SPARK_7_LIKELIHOOD', "number", randomnumber);
+	console.log('Panel - New Plugs cylinder 4');
+  innerDoc.getElementById("newplug4Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 4 Installed";
+  innerDoc.getElementById("likelihood7").innerHTML = randomnumber.toString();
+}
+function resetCylinder5() {
+  var iframe = document.getElementById('iframeId');
+  var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+	var seed = SimVar.GetSimVarValue("L:DA40180XIP_RANDOMSEED", "number");
+	randomnumber = middleSquareMethod(seed)/1000.0;
+	SimVar.SetSimVarValue('L:DA40180XIP_SPARK_9_LIKELIHOOD', "number", randomnumber);
+	console.log('Panel - New Plugs cylinder 5');
+  innerDoc.getElementById("newplug5Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 5 Installed";
+  innerDoc.getElementById("likelihood9").innerHTML = randomnumber.toString();
+}
+function resetCylinder6() {
+  var iframe = document.getElementById('iframeId');
+  var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+	var seed = SimVar.GetSimVarValue("L:DA40180XIP_RANDOMSEED", "number");
+	randomnumber = middleSquareMethod(seed)/1000.0;
+	SimVar.SetSimVarValue('L:DA40180XIP_SPARK_11_LIKELIHOOD', "number", randomnumber);
+	console.log('Panel - New Plugs cylinder 6');
+  innerDoc.getElementById("newplug6Label").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Plugs Cylinder 6 Installed";
+  innerDoc.getElementById("likelihood11").innerHTML = randomnumber.toString();
+}
+function middleSquareMethod(seed) {
+      let result = (seed*seed).toString().padStart(4,"0").slice(1,4);
 
-      // Pad with zeros as necessary, then extract the middle value.
-        seed = parseInt(result + 1);
-      do {
-        seed = seed + Math.floor(Math.random() * 100);
-      } while (seed < 100.0);
-      SimVar.SetSimVarValue("L:G36XIP_RANDOMSEED", "number", seed);
-        return parseFloat(result); // return 3-digit pseudo-random number
-  }
+    // Pad with zeros as necessary, then extract the middle value.
+      seed = parseInt(result + 1);
+	  do {
+		  seed = seed + Math.floor(Math.random() * 100);
+	  } while (seed < 100.0);
+	  SimVar.SetSimVarValue("L:DA40180XIP_RANDOMSEED", "number", seed);
+      return parseFloat(result); // return 3-digit pseudo-random number
+}
 
 
   function resetState()
@@ -201,12 +201,12 @@ checkAutoload();
     DeleteStoredData('G36XIP_YOKE_LEFT_'+this.livery);
     DeleteStoredData('G36XIP_YOKE_RIGHT_'+this.livery);
     DeleteStoredData('G36XIP_DEFROST_'+this.livery);
-    DeleteStoredData('G36XIP_SPARK_1_FOULING_'+this.livery);
-    DeleteStoredData('G36XIP_SPARK_3_FOULING_'+this.livery);
-    DeleteStoredData('G36XIP_SPARK_5_FOULING_'+this.livery);
-    DeleteStoredData('G36XIP_SPARK_7_FOULING_'+this.livery);
-    DeleteStoredData('G36XIP_SPARK_9_FOULING_'+this.livery);
-    DeleteStoredData('G36XIP_SPARK_11_FOULING_'+this.livery);
+    DeleteStoredData('DA40180XIP_SPARK_1_FOULING_'+this.livery);
+    DeleteStoredData('DA40180XIP_SPARK_3_FOULING_'+this.livery);
+    DeleteStoredData('DA40180XIP_SPARK_5_FOULING_'+this.livery);
+    DeleteStoredData('DA40180XIP_SPARK_7_FOULING_'+this.livery);
+    DeleteStoredData('DA40180XIP_SPARK_9_FOULING_'+this.livery);
+    DeleteStoredData('DA40180XIP_SPARK_11_FOULING_'+this.livery);
     document.getElementById("resetLabel").innerHTML = "<i class='fa-solid fa-octagon-exclamation fa-lg'></i> Aircraft State Reset";
     document.getElementById("reset").checked = false;
   };
@@ -381,25 +381,7 @@ checkAutoload();
         var flaps = (GetStoredData('G36XIP_FLAPS_SWITCH_'+this.livery)) ? GetStoredData('G36XIP_FLAPS_SWITCH_'+this.livery) : 'Not saved';
         innerDoc.getElementById("stateFlaps").innerHTML = flaps;
       }
-      else if (innerDoc.getElementById("panelMaintenance")) {
-        var title = SimVar.GetSimVarValue("TITLE", "string");
-        this.livery = title.replace(/\s+/g, '_');
-
-        var sFLikelihood1 = SimVar.GetSimVarValue("L:G36XIP_SPARK_1_LIKELIHOOD", "number");
-        innerDoc.getElementById("likelihood1").innerHTML = sFLikelihood1;
-        var sFLikelihood3 = SimVar.GetSimVarValue("L:G36XIP_SPARK_3_LIKELIHOOD", "number");
-        innerDoc.getElementById("likelihood3").innerHTML = sFLikelihood3;
-        var sFLikelihood5 = SimVar.GetSimVarValue("L:G36XIP_SPARK_5_LIKELIHOOD", "number");
-        innerDoc.getElementById("likelihood5").innerHTML = sFLikelihood5;
-        var sFLikelihood7 = SimVar.GetSimVarValue("L:G36XIP_SPARK_7_LIKELIHOOD", "number");
-        innerDoc.getElementById("likelihood7").innerHTML = sFLikelihood7;
-        var sFLikelihood9 = SimVar.GetSimVarValue("L:G36XIP_SPARK_9_LIKELIHOOD", "number");
-        innerDoc.getElementById("likelihood9").innerHTML = sFLikelihood9;
-        var sFLikelihood11 = SimVar.GetSimVarValue("L:G36XIP_SPARK_11_LIKELIHOOD", "number");
-        innerDoc.getElementById("likelihood11").innerHTML = sFLikelihood11;
-      }
     }
 
 
   }
-  
