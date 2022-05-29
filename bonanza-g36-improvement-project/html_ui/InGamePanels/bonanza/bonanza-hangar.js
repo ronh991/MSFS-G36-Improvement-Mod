@@ -10,6 +10,9 @@ class BonanzaHangar extends HTMLElement {
     let seed = Math.floor(Math.random() * 100);
     setTimeout(function() {
 
+      //var reset = resetState();
+      //console.log(reset);
+
       //get the livery
       var title = SimVar.GetSimVarValue("TITLE", "string");
       this.livery = title.replace(/\s+/g, '_');
